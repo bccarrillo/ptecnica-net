@@ -1,6 +1,13 @@
 
 Test instrucciones para correr aplicacion
 
+Para el login se simulo consuta sin conecta a ninguna tabla
+igual tiene todos los permisos y validacione que provee
+net core
+
+usuario:user@example.com
+password:12345
+
 
 Se realizo lo indicado con funcionamiento basico
 
