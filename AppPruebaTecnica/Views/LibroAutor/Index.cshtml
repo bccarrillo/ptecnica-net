@@ -1,0 +1,72 @@
+﻿@model AppPruebaTecnica.Models.ViewModels.LibroAutorViewModel;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Libros Autor";
+}
+
+
+<div class="container">
+    <!-- Content here -->
+
+
+    <div class="card">
+        <div class="card-header">
+            Informacion del Libro
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                @foreach (var item in Model.Librosss)
+                {
+                    <h2>Titulo: @Html.DisplayFor(modelItem => item.Titulo)</h2>
+                }
+
+                <footer class="blockquote-footer"> Informacion relevante <cite title="Source Title"> 2da Edicion. </cite></footer>
+            </blockquote>
+        </div>
+    </div>
+
+    <br />
+
+
+    <h4>Listado Autores del libro</h4>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellido
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.LibAutVM)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdA )
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidoA)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+</div>
+
+

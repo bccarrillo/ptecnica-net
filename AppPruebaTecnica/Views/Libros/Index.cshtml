@@ -1,0 +1,60 @@
+﻿
+@model IEnumerable<AppPruebaTecnica.Models.LibroEditorial>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Listado de Libros</h3>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nuevo Libro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreditorial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nropaginas)
+            </th>
+            <th>
+                Detalle Autores
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.nombreditorial)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.titulo)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.nropaginas)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Detalle</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Borrar</a>
+            </td>
+            <td>
+                    <a href="/LibroAutor/Index/@item.Id" class="btn btn-secondary">Detalle Autores</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

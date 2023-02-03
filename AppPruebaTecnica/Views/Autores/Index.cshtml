@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AppPruebaTecnica.Models.Autore>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Listado de Autores</h3>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nueva Editorial</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </th>
+            <th>
+                Detalle Libros
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Detalle</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Borrar</a>
+            </td>
+                <td>
+                    <a href="/AutorLibro/Index/@item.Id" class="btn btn-secondary">Detalle Libros</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
