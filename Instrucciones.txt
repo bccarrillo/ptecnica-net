@@ -1,2 +1,17 @@
 
-Test instrucciones
+Test instrucciones para correr aplicacion
+
+
+Se realizo lo indicado con funcionamiento basico
+
+la Base de datos ya se encuentra en un servidor temporal
+de manera remota, de todas maneras se incluyo el script 
+para su revision si asi lo desean
+
+Si estan de acuerdo solo pueden correr el proyecto y el esta apuntando
+a un servidor a una base datos SQL (debe correr sin ningun problema)
+
+Si desean puedo hacer mas ajustes al Diseno visual 
+
+Quedo pendiente a cualquier otra indicacion
+
